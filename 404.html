@@ -62,14 +62,20 @@
             margin: 0 auto;
             max-width: 960px;
             padding: 64px 24px;
+            position: relative;
             text-align: center;
             width: 100%;
+            z-index: 4;
         }
         footer a {
             color: white;
         }
         footer p {
             margin: 0;
+        }
+        footer label {
+            display: block;
+            padding-bottom: 8px;
         }
         .footer-container {
             align-items: flex-start;
@@ -79,7 +85,12 @@
             text-align: left;
         }
         @media ( max-width: 960px ) {
-            flex-direction: column;
+            .footer-container {
+                flex-direction: column;
+            }
+            footer label {
+                margin-top: 16px;
+            }
         }
         .footer-links {
             display: flex;
