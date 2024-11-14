@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>404 - Page Not Found</title>
+    <style>
+        body {
+            background-color: #0f172a;
+            color: #e2e8f0;
+            font-family: system-ui, -apple-system, sans-serif;
+            font-size: 18px;
+            line-height: 1.6;
+            margin: 0;
+            min-height: 100vh;
+            padding: 0;
+        }
+
+        .container {
+            align-items: center;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            margin: 0 auto;
+            max-width: 420px;
+            position: relative;
+            padding: 24px;
+            text-align: center;
+            transition: transform 0.3s ease;
+            z-index: 4;
+        }
+
+        .stars-container {
+            inset: 0;
+            position: fixed;
+        }
+
+        .star {
+            animation: pulse 2s infinite;
+            background: #94a3b8;
+            border-radius: 50%;
+            height: 3px;
+            position: absolute;
+            width: 3px;
+        }
+
+        h1 {
+            font-size: 36px;
+        }
+
+        h1:hover {
+            animation: rainbow 3s infinite linear;
+        }
+
+        .container p:last-child {
+            color: #c4b5fd;
+        }
+
+        .advertisement {
+            padding: 2rem 0;
+            text-align: center;
+        }
+
+        .advertisement img {
+            margin: 0 auto;
+            max-width: 970px;
+            width: 100%;
+        }
+
+        .advertisement-label {
+            color: #aaa;
+            font-size: 12px;
+            text-transform: uppercase;
+        }
+
+        @keyframes pulse {
+            0%, 100% { opacity: 0.3; }
+            50% { opacity: 0.6; }
+        }
+        @keyframes rainbow {
+            0% { color: #7fa9ff; }
+            5.55% { color: #7f7fff; }
+            11.1% { color: #a97fff; }
+            16.65% { color: #d47fff; }
+            22.2% { color: #ff7fff; }
+            27.75% { color: #ff7fd4; }
+            33.3% { color: #ff7fa9; }
+            38.85% { color: #ff7f7f; }
+            44.4% { color: #ffa97f; }
+            49.95% { color: #ffd47f; }
+            55.5% { color: #ffff7f; }
+            61.05% { color: #d4ff7f; }
+            66.6% { color: #a9ff7f; }
+            72.15% { color: #7fff7f; }
+            77.7% { color: #7fffa9; }
+            83.25% { color: #7fffd4; }
+            88.8% { color: #7fffff; }
+            94.35% { color: #7fd4ff; }
+            100% { color.: #7fa9ff; }
+        }
+
+    </style>
+</head>
+<body>
+    <div class="advertisement">
+        <a href="https://www.everytown.org/?utm_source=infowarzzz.com&utm_medium=leaderboard&utm_campaign=everytown">
+            <img src="images/ET-ads-The_Onion_111124_970x250.png" alt="Advertisement for Everytown: We will never stop fighting to end gun violence">
+        </a>
+        <p class="advertisement-label">Advertisement</p>
+    </div>
+    <main class="container" id="container">
+        <h1>Page Not Found</h1>
+        <p>You have stumbled on a mystery. What happened to the content of <em>InfoWars</em>?</p>
+        <p>It is indeed curious. But consider this: Just because what you were looking for isn’t there, it doesn’t mean what you will find isn’t worthwhile. Some things are not lost, even as they cannot be found.</p>
+        <p>We stumble around blindly as we grope for the truth. Sometimes we grab a handful of wet, squishy truth. Sometimes the wet, squishy handful is something else altogether.</p>
+        <p>This much is certain: <em>InfoWars</em> is changing. If you keep coming, you may find things that engage your mind and others that, honestly, will enrage you like always.</p>
+        <p>Enjoy the mystery while it lasts. All will be revealed when the time is right.</p>
+    </main>
+    <div class="stars-container" id="stars" role="presentation"></div>
+    <div class="advertisement">
+        <a href="https://www.everytown.org/?utm_source=infowarzzz.com&utm_medium=banner&utm_campaign=everytown">
+            <img src="images/ET-ads-The_Onion_111124_970x90.png" alt="Advertisement for Everytown: We will never stop fighting to end gun violence">
+        </a>
+        <p class="advertisement-label">Advertisement</p>
+    </div>
+    <script>
+        const starsContainer = document.getElementById('stars');
+        for ( let i = 0; i < 100; i++ ) {
+            const star = document.createElement('div');
+            star.className = 'star';
+            star.style.left = `${Math.random() * 100}%`;
+            star.style.top = `${Math.random() * 100}%`;
+            star.style.animationDelay = `${Math.random() * 2}s`;
+            starsContainer.appendChild(star);
+        }
+    </script>
+</body>
+</html>
